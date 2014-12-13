@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<h2>Blog</h2>
+<div class="post">
+  <div class="post-heading inside">
+    <img src="/public/img/{{ page.author }}.jpg">
+    <h1 class="post-title">
+      <a class="post-title-inside" href="{{ post.url }}">
+        {{ page.title }}
+      </a>
+    </h1>
+      <span class="post-info"><i class="fa fa-calendar"></i>&nbsp{{ page.date | date: "%Y" }}/{{ page.date | date: "%m" }}/{{ page.date | date: "%d" }}  </span>
+      <span class="post-info"><i class="fa fa-book"></i>&nbsp<a href="/category/index.html#{{ page.categories }}">{{ page.categories }}</a></span>
+      <span class="post-info"><i class="fa fa-tags"></i>&nbsp<a href="/tag/index.html#{{ page.tags | first }}">{{ page.tags | first }}</a></span> 
+      <span class="post-info">&nbsp<a href="/tag/index.html#{{ page.tags[1] }}">{{ page.tags[1] }}</a></span>
+      <span class="post-info">&nbsp<a href="/tag/index.html#{{ page.tags[2] }}">{{ page.tags[2] }}</a></span>
+  </div>
+  <div class="post-content">
+    {{ content }}    
+  </div>
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <h3>
+          <a href="{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</div> -->
+
+
+<div class="sub_pagination">
+  
+  {% if page.next %}
+    <a class="sub_pagination-item newer" href="{{page.next.url}}">上一篇&nbsp<i class="fa fa-chain"></i></a>
+  {% else %}
+    <a class="sub_pagination-item" id="lastest">已经是最新一篇&nbsp<i class="fa fa-unlink"></i></a>
+  {% endif %}
+  {% if page.previous %}
+    <a class="sub_pagination-item newer" href="{{page.previous.url}}">{{ page.previous.title }}&nbsp<i class="fa fa-share"></i></a>
+  {% else %}
+    <a class="sub_pagination-item" id="lastone"><i class="fa fa-slideshare"></i>&nbsp 已经是最后一篇</a>
+  {% endif %}
+</div>
+
+
+<!-- <div class="comments"> -->
+<h2>Comments</h2>
+
+
+
+<!-- Duoshuo Comment BEGIN -->  
+{% include comment.html %}
+<!-- Duoshuo Comment END -->

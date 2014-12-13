@@ -1,0 +1,48 @@
+---
+layout: default
+title: Home
+---
+
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <div class="post-heading">
+      <img src="/public/img/{{ post.author }}.jpg">
+      <h1 class="post-title">
+        <a href="{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h1>
+        <span class="post-info"><i class="fa fa-calendar"></i>&nbsp{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}/{{ post.date | date: "%d" }}  </span>
+        <span class="post-info"><i class="fa fa-book"></i>&nbsp<a href="/category/index.html#{{ post.categories }}">{{ post.categories }}</a></span>
+        <span class="post-info"><i class="fa fa-tags"></i>&nbsp<a href="/tag/index.html#{{ post.tags | first }}">{{ post.tags | first }}</a></span>  
+        <span class="post-info">&nbsp<a href="/tag/index.html#{{ post.tags[1] }}">{{ post.tags[1] }}</a></span>
+        <span class="post-info">&nbsp<a href="/tag/index.html#{{ post.tags[2] }}">{{ post.tags[2] }}</a></span>
+    </div>
+    <div class="post-content">
+      {{ post.content | split:"<!-- more -->" | first  }}
+      <div class="readmore">
+        <a href="{{ post.url }}"><i class="fa fa-hand-o-right"></i>&nbsp阅读全文 》</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="/">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
+

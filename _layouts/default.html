@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  {% include head.html %}
+
+  <body class="theme-base-08">
+
+    {% include sidebar.html %}
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <div class="masthead-title">
+            <a href="/" title="Home"><span data-hover="HuS">{{ site.title }}</span></a>
+            <small>{{ site.tagline }}</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content">
+        {{ content }}
+      </div>
+    </div>
+    
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    <div class="footer">
+      <p>  Copyright © {{ site.time | date: '%Y' }} - <a href="/">HuS</a> - Powered by 
+        <a href="http://jekyllrb.com/">Jekyll</a>.
+        <a href="http://github.com/">Github</a>
+      </p>
+      <ul>
+        <li><a href="/"><i class="fa fa-twitter fa-2x"></i></a></li>
+        <li><a href="https://github.com/SooHu"><i class="fa fa-github fa-2x"></i></a></li>
+        <li><a href="https://www.linkedin.com/nhome/?trk="><i class="fa fa-linkedin fa-2x"></i></a></li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+# Dependencies
+markdown:         rdiscount
+highlighter:         pygments
+
+#
+encoding:         "utf-8"
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            HuS
+tagline:          'Time is limited, To be a better man'
+description:      'Hello,World! Here is my personal weblog about technology and life.'
+url:              http://shelldone.com
+
+author:
+  name:           'soohu'
+  url:            http://weibo.com/shelldone
+
+paginate:         5
+
+# Custom vars
+version:          1.0.0
+
+#github:
+#  repo:           https://github.com/poole/lanyon
+
+
+# duoshuo
+comments :
+    provider : duoshuo
+    duoshuo :
+      short_name : soohu
