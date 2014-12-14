@@ -15,16 +15,12 @@ url:              http://shelldone.com
 
 author:
   name:           'soohu'
-  url:            http://weibo.com/shelldone
+  url:            https://github.com/SooHu
 
 paginate:         5
 
 # Custom vars
 version:          1.0.0
-
-#github:
-#  repo:           https://github.com/poole/lanyon
-
 
 # duoshuo
 comments :
