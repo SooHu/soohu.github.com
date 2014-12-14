@@ -1,18 +1,8 @@
-/*
- *  ___
- * /\_ \
- * \//\ \      __      ___   __  __    ___     ___
- *   \ \ \   /'__`\  /' _ `\/\ \/\ \  / __`\ /' _ `\
- *    \_\ \_/\ \_\.\_/\ \/\ \ \ \_\ \/\ \_\ \/\ \/\ \
- *    /\____\ \__/.\_\ \_\ \_\/`____ \ \____/\ \_\ \_\
- *    \/____/\/__/\/_/\/_/\/_/`/___/> \/___/  \/_/\/_/
- *                               /\___/
- *                               \/__/
+/*博客原作者:lanyon 可以访问 https://github.com/poole/lanyon
  *
- * Designed, built, and released under MIT license by @mdo. Learn more at
- * https://github.com/poole/lanyon.
- */
-
+ *博客修改: SooHu 已经布置到  https://github.com/soohu.github.io
+ *
+*/
 
 /*
  * Contents 文件样式内容包括:
@@ -27,7 +17,7 @@
    * Reverse layout 侧边栏弹出
    * Footer 页脚
  * Responsive layout 响应式布局
- * Themes 主题
+ * Themes 主题 已删除
  */
 
 
@@ -56,6 +46,16 @@ a:hover,
 a:focus {
   text-decoration: none;
 }
+
+
+
+body {
+  color: #515151;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
 
 
 html,
@@ -106,7 +106,111 @@ strong {
   color: #303030;
 }
 
+/*other*/
+ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
 
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-bottom: .5rem;
+}
+
+/* Misc */
+hr {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+
+abbr {
+  font-size: 85%;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted #e5e5e5;
+}
+
+/* Code */
+code,
+pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+code {
+  padding: .25em .5em;
+  font-size: 85%;
+  color: #bf616a;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+}
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f9f9f9;
+}
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent;
+}
+.highlight {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+.highlight pre {
+  margin-bottom: 0;
+}
+
+/* Quotes */
+blockquote {
+  padding: .5rem 1rem;
+  margin: .8rem 0;
+  color: #7a7a7a;
+  border-left: .25rem solid #e5e5e5;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+img {
+  display: block;
+  margin: 0 0 1rem;
+  border-radius: 5px;
+}
+
+/* Tables */
+table {
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: .25rem .5rem;
+  border: 1px solid #e5e5e5;
+}
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
 
 
 
@@ -135,19 +239,19 @@ strong {
  * Center the page content.
  */
 
+
 .container {
-  max-width: 28rem;
+  max-width: 38rem;
+  padding-left:  1rem;
+  padding-right: 1rem;
+  margin-left:  auto;
+  margin-right: auto;
 }
-@media (min-width: 38rem) {
-  .container {
-    max-width: 32rem;
-  }
-}
-@media (min-width: 56rem) {
-  .container {
-    max-width: 38rem;
-  }
-}
+
+
+
+
+
 
 
 /*
@@ -159,6 +263,8 @@ strong {
 .masthead {
   background-color: #fff;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 0.5rem 1rem;
   margin: 0 auto 3rem;
@@ -245,11 +351,7 @@ strong {
   -webkit-transition: all .3s ease-in-out;
           transition: all .3s ease-in-out;
 }
-@media (min-width: 30rem) {
-  .sidebar {
-    font-size: .75rem; /* 14px */
-  }
-}
+
 
 /*Sideerbar 图片logo*/
 .sidebar-logo img {
@@ -284,7 +386,7 @@ strong {
 }
 .sidebar-nav-item {
   display: block;
-  padding: .5rem 1rem;
+  padding: .5rem 1.5rem;
   border-top: 1px solid rgba(255,255,255,.1);
   transition: 0.4s ease-in-out 0;
 }
@@ -296,15 +398,7 @@ a.sidebar-nav-item:focus {
   /*transform: scale(0.9);/*缩放0.9*/*/
 }
 
-@media (min-width: 48rem) {
-  .sidebar-item {
-    padding: 1.5rem;
-  }
-  .sidebar-nav-item {
-    padding-left:  1.5rem;
-    padding-right: 1.5rem;
-  }
-}
+
 
 /* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
 .sidebar-checkbox {
@@ -344,17 +438,7 @@ a.sidebar-nav-item:focus {
   background-color: #505050;
 }
 
-@media (min-width: 30.1rem) {
-  .sidebar-toggle {
-    position: fixed;
-    width: 2.25rem;
-  }
-  .sidebar-toggle:before {
-    padding-bottom: .15rem;
-    border-top-width: .45rem;
-    border-bottom-width: .15rem;
-  }
-}
+
 
 
 /* Slide effect
@@ -369,7 +453,7 @@ a.sidebar-nav-item:focus {
  *
  * Read more about it at http://meyerweb.com/eric/thoughts/2011/09/12/.
  */
-
+/*sidebar effect*/
 .wrap,
 .sidebar,
 .sidebar-toggle {
@@ -382,6 +466,15 @@ a.sidebar-nav-item:focus {
 .sidebar-toggle {
   -webkit-transition: -webkit-transform .3s ease-in-out;
           transition: transform .3s ease-in-out;
+}
+.sidebar-toggle {
+  position: fixed;
+  width: 2.25rem;
+}
+.sidebar-toggle:before {
+  padding-bottom: .15rem;
+  border-top-width: .45rem;
+  border-bottom-width: .15rem;
 }
 
 #sidebar-checkbox:checked + .sidebar {
@@ -413,6 +506,9 @@ a.sidebar-nav-item:focus {
   border: 1px solid rgb(200,200,200);
   box-shadow: 3px 5px 3px rgb(220,220,220);
   border-radius: 8px;
+}
+.post-name {
+  margin-top: 4rem;
 }
 .post .post-heading {
   border-bottom: 1px solid #eee;
@@ -526,8 +622,9 @@ a.sidebar-nav-item:focus {
 /*主页页码 前五篇和后五篇*/
 .pagination {
   overflow: hidden; /* clearfix */
-  margin-left: -1rem;
-  margin-right: -1rem;
+  /*margin-left: -1rem;
+  margin-right: -1rem;*/
+  margin: 10rem 0 2rem 0;
   color: #ccc;
   text-align: center;
 }
@@ -571,44 +668,6 @@ a.sub_pagination-item:hover {
 
 
 
-@media (min-width: 30rem) {
-  .pagination {
-    margin: 3rem 0;
-  }
-  .pagination-item {
-    float: left;
-    width: 50%;
-  }
-  .pagination-item:first-child {
-    margin-bottom: 0;
-    border-top-left-radius:    4px;
-    border-bottom-left-radius: 4px;
-  }
-  .pagination-item:last-child {
-    margin-left: -1px;
-    border-top-right-radius:    4px;
-    border-bottom-right-radius: 4px;
-  }
-
-  /*subpagination*/
-  .sub_pagination {
-    margin: 3rem 0;
-  }
-  .sub_pagination-item {
-    float: left;
-    width: 50%;
-  }
-  .sub_pagination-item:first-child {
-    margin-bottom: 0;
-    border-top-left-radius:    4px;
-    border-bottom-left-radius: 4px;
-  }
-  .sub_pagination-item:last-child {
-    margin-left: -1px;
-    border-top-right-radius:    4px;
-    border-bottom-right-radius: 4px;
-  }
-}
 
 
 /*
@@ -685,29 +744,90 @@ a.sub_pagination-item:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Reponsive layout 响应式布局*/
 
+
+/**/
+@media (min-width: 38rem) {
+  .container {
+    max-width: 32rem;
+  }
+}
+@media (min-width: 56rem) {
+  .container {
+    max-width: 38rem;
+  }
+}
+
+
 /*顶部栏*/
+/*小于800px时隐藏简介，站名居中显示*/
 @media screen and (max-width: 800px) {
   .masthead-title {
     text-align: center;
   }
   .masthead-title small {
     display: none;
+  }
+}
+
+/*SideBar*/
+/*小于800px时侧边栏字体变小*/
+@media screen and (max-width: 800px) {
+  .sidebar {
+    font-size: 16px; /* 14px */
+  }
+}
+
+@media (max-width: 800px) {
+  .sidebar-item {
+    padding: 1.5rem;
+  }
+  .sidebar-nav-item {
+    padding-left:  1rem;
+    padding-right: 1rem;
+  }
+}
+
+
+
+/*分页*/
+
+@media (min-width: 600px) {
+  .pagination {
+    margin: 10rem 0 2rem 0;
+  }
+  .pagination-item {
+    float: left;
+    width: 50%;
+  }
+  .pagination-item:first-child {
+    margin-bottom: 0;
+    border-top-left-radius:    4px;
+    border-bottom-left-radius: 4px;
+  }
+  .pagination-item:last-child {
+    margin-left: -1px;
+    border-top-right-radius:    4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  /*subpagination*/
+  .sub_pagination {
+    margin: 3rem 0;
+  }
+  .sub_pagination-item {
+    float: left;
+    width: 50%;
+  }
+  .sub_pagination-item:first-child {
+    margin-bottom: 0;
+    border-top-left-radius:    4px;
+    border-bottom-left-radius: 4px;
+  }
+  .sub_pagination-item:last-child {
+    margin-left: -1px;
+    border-top-right-radius:    4px;
+    border-bottom-right-radius: 4px;
   }
 }

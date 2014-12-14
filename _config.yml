@@ -1,6 +1,6 @@
 # Dependencies
 markdown:         rdiscount
-highlighter:         pygments
+highlighter:      pygments
 
 #
 encoding:         "utf-8"
