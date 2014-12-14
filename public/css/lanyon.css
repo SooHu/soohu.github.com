@@ -15,16 +15,19 @@
 
 
 /*
- * Contents
+ * Contents 文件样式内容包括:
  *
- * Global resets
- * Masthead
- * Sidebar
- * Slide effect
- * Posts and pages
- * Pagination
- * Reverse layout
- * Themes
+ * Global resets 全局重置
+ * Component 组件
+   * Masthead 顶部栏
+   * Sidebar 侧边框
+   * Slide effect 侧边框动效
+   * Posts and pages 博文样式
+   * Pagination 标码页
+   * Reverse layout 侧边栏弹出
+   * Footer 页脚
+ * Responsive layout 响应式布局
+ * Themes 主题
  */
 
 
@@ -35,21 +38,7 @@
  */
 
 /* Prevent scroll on narrow devices */
-html,
-body {
-  overflow-x: hidden;
-}
 
-html {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  color: #313131;
-  letter-spacing: -.025rem;
-}
 *,
 *:after,
 *::before {
@@ -57,6 +46,74 @@ h1, h2, h3, h4, h5, h6 {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+a {
+  color: #268bd2;
+  text-decoration: none;
+}
+/* `:focus` is linked to `:hover` for basic accessibility */
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+}
+
+html {
+  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+/*h1~h5 p strong */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #313131;
+  letter-spacing: -.025rem;/*字体间距*/
+  /*text-rendering: optimizeLegibility;*/
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+h4, h5, h6 {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+p {
+  font-size: 0.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+strong {
+  color: #303030;
+}
+
+
+
+
+
+
+
+
+
 
 /*
  * Wrapper
@@ -94,16 +151,19 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*
- * Masthead
+ * Masthead 顶部栏
  *
  * Super small header above the content for site name and short description.
  */
 
 .masthead {
-  padding-top:    1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 0 auto 3rem;
   border-bottom: 1px solid #eee;
+  z-index: 100;
 }
 .masthead-title {
   margin-top: 0;
@@ -111,8 +171,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #505050;
 }
 
-/*HUS on hover*/
+/*HUS on hover effect*/
 .masthead-title a {
+  color: #ac4142;
   display: inline-block;
   font-size: 1.8rem;
   line-height: 1.8rem;
@@ -144,9 +205,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 /*有bug还没修复*/
 
-
-
-
 .masthead-title small {
   font-size: 75%;
   font-weight: 400;
@@ -154,18 +212,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0;
 }
 
-@media (max-width: 48rem) {
-  .masthead-title {
-    text-align: center;
-  }
-  .masthead-title small {
-    display: none;
-  }
-}
 
 
-/*
- * Sidebar
+/* 
+ * Sidebar 侧边框
  *
  * The sidebar is the drawer, the item we are toggling with our handy hamburger
  * button in the corner of the page.
@@ -201,39 +251,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Sidebar content */
-.sidebar a {
-  font-weight: normal;
-  color: #fff;
-}
-.sidebar-item {
-  padding: 1rem;
-}
-.sidebar-item p:last-child {
-  margin-bottom: 0;
-}
-
-
-
-
-
-/* Sidebar nav */
-.sidebar-nav {
-  border-bottom: 1px solid rgba(255,255,255,.1);
-}
-.sidebar-nav-item {
-  display: block;
-  padding: .5rem 1rem;
-  border-top: 1px solid rgba(255,255,255,.1);
-}
-.sidebar-nav-item.active,
-a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
-  text-decoration: none;
-  background-color: rgba(255,255,255,.1);
-  border-color: transparent;
-}
-/*side img logo 修改*/
+/*Sideerbar 图片logo*/
 .sidebar-logo img {
   width: 80px;
   height: 80px;
@@ -247,6 +265,37 @@ a.sidebar-nav-item:focus {
   transform: rotate(360deg);
 
 }
+
+/* Sidebar content */
+.sidebar a {
+  font-weight: normal;
+  color: #fff;
+}
+.sidebar-item {
+  padding: 1rem;
+}
+.sidebar-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.sidebar-nav-item {
+  display: block;
+  padding: .5rem 1rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: 0.4s ease-in-out 0;
+}
+.sidebar-nav-item.active,
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  background-color: rgba(255,255,255,.1);
+  border-color: transparent;
+  /*transform: scale(0.9);/*缩放0.9*/*/
+}
+
 @media (min-width: 48rem) {
   .sidebar-item {
     padding: 1.5rem;
@@ -324,6 +373,7 @@ a.sidebar-nav-item:focus {
 .wrap,
 .sidebar,
 .sidebar-toggle {
+  z-index: 101;
   -webkit-backface-visibility: hidden;
       -ms-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -347,11 +397,17 @@ a.sidebar-nav-item:focus {
 
 
 /*
- * Posts and pages
+ * Posts and pages 博文页面
  *
  * Each post is wrapped in `.post` and is used on default and post layouts. Each
  * page is wrapped in `.page` and is only used on the page layout.
  */
+.posts {
+  position: relative;
+  top: 145px;
+}
+
+
  /*文章外面的边框*/
 .post {
   border: 1px solid rgb(200,200,200);
@@ -383,21 +439,25 @@ a.sidebar-nav-item:focus {
 .post {
   margin-bottom: 4em;
 }
-/*标题*/
+/*首页标题*/
 .post-title {
   margin: 0 0 0 80px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   display: block;
   padding: 10px 10px 0 10px;
 }
-/*内标题无连接样式*/
-.post-heading.inside {
-/*  background-color: rgb(50,230,90);
-*/}
-.post-title .post-title-inside {
+.post-title a {
+    color: #000;
+}
+.post-title .post-title-home:hover,
+.post-title .post-title-home:focus {
+  color: #ac4142;
+}
+/*博文标题*/
+.post-title .post-title-blog {
   text-decoration: none;
   cursor: default;/*无鼠标样式*/
-  color: ;
+  color: #000;
 }
 /* Blog post or page title */
 /*.page-title,
@@ -414,8 +474,6 @@ a.sidebar-nav-item:focus {
 }*/
 
 
-
-
 /* 日期、分类、标签 */
 .post-info {
   font-size: 0.6rem;
@@ -429,9 +487,19 @@ a.sidebar-nav-item:focus {
   margin-top: 10px;
 }
 
+/*阅读全文*/
+.post-content .readmore a {
+  font-size: 0.7rem;
+}
+/*阅读全文hover样式*/
+.post-content .readmore a:hover,
+.post-content .readmore a:focus {
+  font-weight: bold;
+}
+
 
 /* Related posts */
-.related {
+/*.related {
   padding-top: 2rem;
   padding-bottom: 2rem;
   border-top: 1px solid #eee;
@@ -453,20 +521,18 @@ a.sidebar-nav-item:focus {
 }
 .related-posts li a:hover small {
   color: inherit;
-}
+}*/
 
-
+/*主页页码 前五篇和后五篇*/
 .pagination {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
   color: #ccc;
   text-align: center;
 }
-
-/* Pagination items can be `span`s or `a`s */
 .pagination-item {
+  font-size: 0.8rem;
   display: block;
   padding: 1rem;
   border: 1px solid #eee;
@@ -474,30 +540,21 @@ a.sidebar-nav-item:focus {
 .pagination-item:first-child {
   margin-bottom: -1px;
 }
-
-/* Only provide a hover state for linked pagination items */
 a.pagination-item:hover {
+  color: #ac4142;
   background-color: #f5f5f5;
 }
 
-/*
- * Pagination
- *
- * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
- * there are no more previous or next posts to show.
- */
-
+/*博文页面 前一页和后一页*/
 
 .sub_pagination {
+  font-size: 0.6rem;
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
   color: #ccc;
   text-align: center;
 }
-
-/* Pagination items can be `span`s or `a`s */
 .sub_pagination-item {
   display: block;
   padding: 1rem;
@@ -506,9 +563,9 @@ a.pagination-item:hover {
 .sub_pagination-item:first-child {
   margin-bottom: -1px;
 }
-
-/* Only provide a hover state for linked pagination items */
 a.sub_pagination-item:hover {
+  font-weight: bold;
+  color: #ac4142;
   background-color: #f5f5f5;
 }
 
@@ -581,17 +638,22 @@ a.sub_pagination-item:hover {
 /*footer*/
 .footer {
   border-top: 1px solid #eee;
-/*  background-color: #ac4142;
-*/  font-size: 0.5rem;
+  font-size: 0.5rem;
   padding: 12px 0 12px 0;
   color: #777; 
   text-align: center;
 }
-.footer p {
+.footer p,
+.footer a {
+  font-size: 0.5rem;
   margin-bottom: 10px;
 }
 .footer p a {
   text-decoration: none;
+}
+.footer p a:hover,
+.footer p a:focus {
+  color: #ac4142;
 }
 .footer ul {
   list-style: none;
@@ -612,8 +674,7 @@ a.sub_pagination-item:hover {
   color: #268bd2;
 }
 
-
-
+/*评论框，可以自定义多说评论*/
 #comment {
   border: 1px solid rgb(200,200,200);
   box-shadow: 3px 5px 3px rgb(220,220,220);
@@ -626,105 +687,27 @@ a.sub_pagination-item:hover {
 
 
 
-/*
- * Themes
- *
- * Apply custom color schemes by adding the appropriate class to the `body`.
- * Based on colors from Base16: http://chriskempson.github.io/base16/#default.
- */
 
-/* Red */
-.theme-base-08 .sidebar,
-.theme-base-08 .sidebar-toggle:active,
-.theme-base-08 #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #ac4142;
-}
-.theme-base-08 .container a,
-.theme-base-08 .sidebar-toggle,
-.theme-base-08 .related-posts li a:hover {
-  color: #ac4142;
-}
 
-/* Orange */
-.theme-base-09 .sidebar,
-.theme-base-09 .sidebar-toggle:active,
-.theme-base-09 #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #d28445;
-}
-.theme-base-09 .container a,
-.theme-base-09 .sidebar-toggle,
-.theme-base-09 .related-posts li a:hover {
-  color: #d28445;
-}
 
-/* Yellow */
-.theme-base-0a .sidebar,
-.theme-base-0a .sidebar-toggle:active,
-.theme-base-0a #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #f4bf75;
-}
-.theme-base-0a .container a,
-.theme-base-0a .sidebar-toggle,
-.theme-base-0a .related-posts li a:hover {
-  color: #f4bf75;
-}
 
-/* Green */
-.theme-base-0b .sidebar,
-.theme-base-0b .sidebar-toggle:active,
-.theme-base-0b #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #90a959;
-}
-.theme-base-0b .container a,
-.theme-base-0b .sidebar-toggle,
-.theme-base-0b .related-posts li a:hover {
-  color: #90a959;
-}
 
-/* Cyan */
-.theme-base-0c .sidebar,
-.theme-base-0c .sidebar-toggle:active,
-.theme-base-0c #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #75b5aa;
-}
-.theme-base-0c .container a,
-.theme-base-0c .sidebar-toggle,
-.theme-base-0c .related-posts li a:hover {
-  color: #75b5aa;
-}
 
-/* Blue */
-.theme-base-0d .sidebar,
-.theme-base-0d .sidebar-toggle:active,
-.theme-base-0d #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #6a9fb5;
-}
-.theme-base-0d .container a,
-.theme-base-0d .sidebar-toggle,
-.theme-base-0d .related-posts li a:hover {
-  color: #6a9fb5;
-}
 
-/* Magenta */
-.theme-base-0e .sidebar,
-.theme-base-0e .sidebar-toggle:active,
-.theme-base-0e #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #aa759f;
-}
-.theme-base-0e .container a,
-.theme-base-0e .sidebar-toggle,
-.theme-base-0e .related-posts li a:hover {
-  color: #aa759f;
-}
 
-/* Brown */
-.theme-base-0f .sidebar,
-.theme-base-0f .sidebar-toggle:active,
-.theme-base-0f #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #8f5536;
-}
-.theme-base-0f .container a,
-.theme-base-0f .sidebar-toggle,
-.theme-base-0f .related-posts li a:hover {
-  color: #8f5536;
+
+
+
+
+
+/*Reponsive layout 响应式布局*/
+
+/*顶部栏*/
+@media screen and (max-width: 800px) {
+  .masthead-title {
+    text-align: center;
+  }
+  .masthead-title small {
+    display: none;
+  }
 }
