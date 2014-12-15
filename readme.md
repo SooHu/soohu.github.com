@@ -1,8 +1,17 @@
 ##this is my blog
-博客搭载在github上，地址:[soohu.github.com](soohu.github.io)
+博客搭载在github上，地址:soohu.github.io
 
 ##Usage
 如果觉得可以的话可以直接clone这个项目
+
+post
+
+* title
+* layout
+* author
+* category
+* tag
+
 
 ##Options
 施工中

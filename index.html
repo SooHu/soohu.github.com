@@ -16,8 +16,8 @@ title: Home
         <span class="post-info"><i class="fa fa-calendar"></i>&nbsp{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}/{{ post.date | date: "%d" }}  </span>
         <span class="post-info"><i class="fa fa-book"></i>&nbsp<a href="/category/index.html#{{ post.categories }}">{{ post.categories }}</a></span>
         <span class="post-info"><i class="fa fa-tags"></i>&nbsp<a href="/tag/index.html#{{ post.tags | first }}">{{ post.tags | first }}</a></span>  
-        <span class="post-info">&nbsp<a href="/tag/index.html#{{ post.tags[1] }}">{{ post.tags[1] }}</a></span>
-        <span class="post-info">&nbsp<a href="/tag/index.html#{{ post.tags[2] }}">{{ post.tags[2] }}</a></span>
+        <span class="post-info"><a href="/tag/index.html#{{ post.tags[1] }}">{{ post.tags[1] }}</a></span>
+        <span class="post-info"><a href="/tag/index.html#{{ post.tags[2] }}">{{ post.tags[2] }}</a></span>
     </div>
     <div class="post-content">
       {{ post.content | split:"<!-- more -->" | first  }}
