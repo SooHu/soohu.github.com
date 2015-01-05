@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #224466;
+}
+
+.share {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.share li {
+  position: relative;
+}
+
+.share li:nth-of-type(1) .social-link,
+.share li:nth-of-type(1) .social-link:hover {
+  background: #3B5998 url("http://i.imgur.com/u9gLigk.png") 50% 50% no-repeat;
+  background-size: 25px auto;
+}
+
+.share li:nth-of-type(1) .nav-label {
+  -moz-transition: background 0.4s ease, -moz-transform 0.4s ease 0.1s;
+  -o-transition: background 0.4s ease, -o-transform 0.4s ease 0.1s;
+  -webkit-transition: background 0.4s ease, -webkit-transform 0.4s ease;
+  -webkit-transition-delay: 0s, 0.1s;
+  transition: background 0.4s ease, transform 0.4s ease 0.1s;
+  background: #1e2e4f;
+}
+
+.share li:nth-of-type(1) .social-link:hover .nav-label {
+  -moz-transition: -moz-transform 0.4s ease, background 0.4s ease 0.1s;
+  -o-transition: -o-transform 0.4s ease, background 0.4s ease 0.1s;
+  -webkit-transition: -webkit-transform 0.4s ease, background 0.4s ease;
+  -webkit-transition-delay: 0s, 0.1s;
+  transition: transform 0.4s ease, background 0.4s ease 0.1s;
+  background: #3B5998;
+}
+
+.share li:nth-of-type(2) .social-link,
+.share li:nth-of-type(2) .social-link:hover {
+  background: #4099FF url("http://i.imgur.com/QzPDsIB.png") 50% 50% no-repeat;
+  background-size: 25px auto;
+}
+
+.share li:nth-of-type(2) .nav-label {
+  -moz-transition: background 0.4s ease, -moz-transform 0.4s ease 0.1s;
+  -o-transition: background 0.4s ease, -o-transform 0.4s ease 0.1s;
+  -webkit-transition: background 0.4s ease, -webkit-transform 0.4s ease;
+  -webkit-transition-delay: 0s, 0.1s;
+  transition: background 0.4s ease, transform 0.4s ease 0.1s;
+  background: #0065d9;
+}
+
+.share li:nth-of-type(2) .social-link:hover .nav-label {
+  -moz-transition: -moz-transform 0.4s ease, background 0.4s ease 0.1s;
+  -o-transition: -o-transform 0.4s ease, background 0.4s ease 0.1s;
+  -webkit-transition: -webkit-transform 0.4s ease, background 0.4s ease;
+  -webkit-transition-delay: 0s, 0.1s;
+  transition: transform 0.4s ease, background 0.4s ease 0.1s;
+  background: #4099FF;
+}
+
+.share li .social-link {
+  padding: 0;
+  display: block;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  padding: 15px 20px;
+}
+
+.share li .social-link .nav-label {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: white;
+  display: block;
+  height: 60px;
+  position: absolute;
+  top: 0px;
+  top: 0rem;
+  margin-left: 40px;
+  line-height: 64px;
+  padding: 0 20px;
+  white-space: nowrap;
+  z-index: 4;
+  -moz-transition: -moz-transform 0.4s ease;
+  -o-transition: -o-transform 0.4s ease;
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+
+  -moz-transform-origin: left 50%;
+  -ms-transform-origin: left 50%;
+  -webkit-transform-origin: left 50%;
+  transform-origin: left 50%;
+  
+  -moz-transform: rotateY(-90deg);
+  -webkit-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+}
+
+.share li .social-link .nav-label span {
+  -moz-transform-origin: left 50%;
+  -ms-transform-origin: left 50%;
+  -webkit-transform-origin: left 50%;
+  transform-origin: left 50%;
+  
+  -moz-transform: rotateY(-90deg);
+  -webkit-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+}
+
+.share li .social-link:hover .nav-label,
+.share li .social-link:hover .nav-label span {
+  -moz-transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+

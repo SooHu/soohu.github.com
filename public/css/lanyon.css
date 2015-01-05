@@ -53,6 +53,8 @@ a:focus {
 body {
   color: #515151;
   background-color: #fff;
+  /*background-image: url(/public/img/bg.png);*/
+  background-repeat: repeat;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -74,11 +76,13 @@ html {
 }
 /*h1~h5 p strong */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: 'Open Sans',"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: bold;
   line-height: 1.5;
   color: #313131;
-  letter-spacing: -.025rem;/*字体间距*/
+  letter-spacing: normal;/*字体间距*/
+  word-spacing: normal;
+  /*text-justify: auto;*/
   /*text-rendering: optimizeLegibility;*/
 }
 
@@ -91,7 +95,7 @@ h2 {
 }
 h3 {
   margin-top: 1.5rem;
-  font-size: 1rem;
+  font-size: .8rem;
 }
 h4, h5, h6 {
   margin-top: 1rem;
@@ -99,9 +103,10 @@ h4, h5, h6 {
 }
 
 p {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 strong {
   color: #303030;
@@ -112,7 +117,9 @@ ul, ol, dl {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-
+li {
+	font-size: .7rem;
+}
 dt {
   font-weight: bold;
 }
@@ -158,7 +165,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 1rem;
-  font-size: .8rem;
+  font-size: .6rem;
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
@@ -249,7 +256,9 @@ tbody tr:nth-child(odd) th {
   margin-left:  auto;
   margin-right: auto;
 }
-
+.content {
+  background-color: #fff;
+}
 
 
 
@@ -264,7 +273,7 @@ tbody tr:nth-child(odd) th {
 
 .masthead {
   background-color: #fff;
-  position: fixed;
+  /*position: fixed;*/
   top: 0;
   left: 0;
   width: 100%;
@@ -507,7 +516,7 @@ a.sidebar-nav-item:focus {
 .post {
   border: 1px solid rgb(200,200,200);
   box-shadow: 3px 5px 3px rgb(220,220,220);
-  border-radius: 8px;
+  border-radius: 3px;
 }
 .post-name {
   margin-top: 4rem;
@@ -516,7 +525,7 @@ a.sidebar-nav-item:focus {
   border-bottom: 1px solid #eee;
 }
 .post  .post-content {
-    padding: 0 20px;
+    padding: 0 25px;
 }
 
 /*头像*/
@@ -536,6 +545,11 @@ a.sidebar-nav-item:focus {
 .page,
 .post {
   margin-bottom: 4em;
+}
+
+
+.post p img {
+  width: 100%;
 }
 /*首页标题*/
 .post-title {

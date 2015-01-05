@@ -13,6 +13,13 @@ title: Home
           {{ post.title }}
         </a>
       </h1>
+        <p class="post-info">
+        {% if post.author == "SooHu" %}
+          {{ post.author }}原创
+        {% else %}
+          转载{{ post.author }}
+        {% endif %}
+        </p>
         <span class="post-info"><i class="fa fa-calendar"></i>&nbsp{{ post.date | date: "%Y" }}/{{ post.date | date: "%m" }}/{{ post.date | date: "%d" }}  </span>
         <span class="post-info"><i class="fa fa-book"></i>&nbsp<a href="/category/index.html#{{ post.categories }}">{{ post.categories }}</a></span>
         <span class="post-info"><i class="fa fa-tags"></i>&nbsp<a href="/tag/index.html#{{ post.tags | first }}">{{ post.tags | first }}</a></span>  
