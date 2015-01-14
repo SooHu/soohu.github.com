@@ -10,6 +10,7 @@
  * Global resets 全局重置
  * Component 组件
    * Masthead 顶部栏
+   * Audioplayer 播放器
    * Sidebar 侧边框
    * Slide effect 侧边框动效
    * Posts and pages 博文样式
@@ -328,6 +329,14 @@ tbody tr:nth-child(odd) th {
   color: #c0c0c0;
   letter-spacing: 0;
 }
+
+/*AudioPlayer*/
+/*#amazingaudioplayer-1 {
+  position: relative;
+  right: 0;
+  top: 100px;
+}
+*/
 
 
 
