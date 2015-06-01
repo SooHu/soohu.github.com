@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="/public/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.toggle').click(function(e) {
+		  var toggle = this;
+		  
+		  e.preventDefault();
+		  
+		  $(toggle).toggleClass('toggle--on')
+		         .toggleClass('toggle--off')
+		         .addClass('toggle--moving');
+		  
+		  setTimeout(function() {
+		    $(toggle).removeClass('toggle--moving');
+		  }, 200)
+		});
+	});	
+	</script>
+</head>
+<body>
+	<h1>Toggle.</h1>
+	<a href="#" class="toggle toggle--on"></a>
+</body>
+</html>

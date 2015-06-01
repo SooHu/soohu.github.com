@@ -330,13 +330,7 @@ tbody tr:nth-child(odd) th {
   letter-spacing: 0;
 }
 
-/*AudioPlayer*/
-/*#amazingaudioplayer-1 {
-  position: relative;
-  right: 0;
-  top: 100px;
-}
-*/
+
 
 
 
@@ -517,7 +511,7 @@ a.sidebar-nav-item:focus {
  */
 .posts {
   position: relative;
-  top: 145px;
+  top: 0px;
 }
 
 
@@ -528,7 +522,7 @@ a.sidebar-nav-item:focus {
   border-radius: 3px;
 }
 .post-name {
-  margin-top: 4rem;
+  margin-top: 0rem;
 }
 .post .post-heading {
   border-bottom: 1px solid #eee;
@@ -775,7 +769,7 @@ a.sub_pagination-item:hover {
 
 /* 归档页*/
 .page {
-  margin-top: 106px;
+  margin-top: 0px;
 }
 .page-title {
   /*text-align: center;*/
