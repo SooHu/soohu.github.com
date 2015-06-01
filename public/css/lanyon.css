@@ -329,7 +329,50 @@ tbody tr:nth-child(odd) th {
   color: #c0c0c0;
   letter-spacing: 0;
 }
+/* 胡子*/
+svg {
+ 
+  left: 0;
+  right: 0;
+  width: 60px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+}
 
+#mustache {
+  position:absolute;
+  z-index:100;
+  top:1rem;
+}
+#mustache:hover {
+  animation:twirl 1s ease-in-out;
+  -webkit-animation:twirl 1s ease-in-out;
+  -moz-animation:twirl 1s ease-in-out
+}
+@-webkit-keyframes twirl {
+    0% {
+        -webkit-transform: scale(1)
+    }
+    10%,
+    20% {
+        -webkit-transform: scale(0.9) rotate(-3deg)
+    }
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: scale(1.1) rotate(3deg)
+    }
+    40%,
+    60%,
+    80% {
+        -webkit-transform: scale(1.1) rotate(-3deg)
+    }
+    100% {
+        -webkit-transform: scale(1) rotate(0)
+    }
+}
 
 
 
@@ -517,6 +560,7 @@ a.sidebar-nav-item:focus {
 
  /*文章外面的边框*/
 .post {
+  margin-top: 80px;
   border: 1px solid rgb(200,200,200);
   box-shadow: 3px 5px 3px rgb(220,220,220);
   border-radius: 3px;
