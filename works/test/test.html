@@ -6,6 +6,26 @@
 	<title>Document</title>
 </head>
 <body>
-	
+	<a href="newsapp://">打开APP</a>
+	<iframe class="openApp hide" src="about:blank"></iframe>  
+<script>  
+    function openClient(el, downloadUrl){  
+        var iframe = arguments.callee.iframe;  
+          
+        if(!iframe){  
+            iframe = document.querySelector('.openApp')  
+            arguments.callee.iframe = iframe;  
+        }  
+        var startTime = +new Date();  
+        iframe.src = el.getAttribute('data-scheme');  
+          
+        // 如果已知安装的了，则无须跳转下载页  
+        setTimeout(function() { // 如果不能打开客户端，跳到下载页面  
+            if (Date.now() - startTime < 500) // 通过判断触发的时间与执行settimeout的时间差值是否小于设置的定时时间加上一个浮动值（一般设为100）。  
+                window.location.href = downloadUrl;  
+        }, 400);  
+    }  
+    openClient = openClient.delegate(null, 'http://g.3gtv.net');  
+</script>  
 </body>
 </html>
