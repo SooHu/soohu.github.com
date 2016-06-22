@@ -6,26 +6,19 @@
 	<title>Document</title>
 </head>
 <body>
-	<a href="newsapp://">打开APP</a>
-	<iframe class="openApp hide" src="about:blank"></iframe>  
-<script>  
-    function openClient(el, downloadUrl){  
-        var iframe = arguments.callee.iframe;  
-          
-        if(!iframe){  
-            iframe = document.querySelector('.openApp')  
-            arguments.callee.iframe = iframe;  
-        }  
-        var startTime = +new Date();  
-        iframe.src = el.getAttribute('data-scheme');  
-          
-        // 如果已知安装的了，则无须跳转下载页  
-        setTimeout(function() { // 如果不能打开客户端，跳到下载页面  
-            if (Date.now() - startTime < 500) // 通过判断触发的时间与执行settimeout的时间差值是否小于设置的定时时间加上一个浮动值（一般设为100）。  
-                window.location.href = downloadUrl;  
-        }, 400);  
-    }  
-    openClient = openClient.delegate(null, 'http://g.3gtv.net');  
-</script>  
+	<a href="https://itunes.apple.com/cn/app/id477927812" id="openApp">贴吧客户端</a>  
+<script type="text/javascript">  
+    document.getElementById('openApp').onclick = function(e){  
+        // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为  
+        // 否则打开a标签的href链接  
+        var ifr = document.createElement('iframe');  
+        ifr.src = 'weixin://';  
+        ifr.style.display = 'none';  
+        document.body.appendChild(ifr);  
+        window.setTimeout(function(){  
+            document.body.removeChild(ifr);  
+        },3000)  
+    };  
+</script>
 </body>
 </html>
